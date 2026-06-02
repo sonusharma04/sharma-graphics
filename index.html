@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>शर्मा ग्राफिक्स एवं प्रिंट स्टूडियो</title>
+<title>शर्मा ग्राफिक्स & प्रिंट स्टूडियो</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -15,98 +14,102 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#b30000;
-color:#fff;
+background:#f5f5f5;
+color:#333;
 }
 
-.hero{
-background:url('banner.jpg');
-background-size:cover;
-background-position:center;
-padding:80px 20px;
+header{
+background:linear-gradient(135deg,#d50000,#ff3d3d);
+color:white;
 text-align:center;
-}
-
-.overlay{
-background:rgba(139,0,0,0.85);
-padding:40px;
-border-radius:20px;
-max-width:1000px;
-margin:auto;
+padding:40px 20px;
 }
 
 .logo{
-width:180px;
+width:150px;
+height:150px;
+border-radius:50%;
 background:#fff;
 padding:10px;
-border-radius:15px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:50px;
-color:#ffd700;
-text-shadow:3px 3px 5px #000;
 margin-bottom:15px;
 }
 
-.hero p{
-font-size:22px;
-line-height:1.8;
+header h1{
+font-size:40px;
+margin-bottom:10px;
 }
 
-.btn{
-display:inline-block;
-margin-top:20px;
-background:#25D366;
-color:#fff;
-padding:14px 30px;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
+header p{
+font-size:18px;
 }
 
 .container{
+width:90%;
 max-width:1200px;
 margin:auto;
-padding:30px 20px;
+padding:40px 0;
 }
 
-.card{
-background:#ffffff;
-color:#000;
-padding:25px;
-border-radius:15px;
-margin-bottom:25px;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-}
-
-.card h2{
-color:#c00000;
-margin-bottom:15px;
+.section-title{
+text-align:center;
+font-size:32px;
+color:#d50000;
+margin-bottom:30px;
 }
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+.card h3{
+color:#d50000;
+margin-bottom:15px;
+}
+
+.card ul{
+padding-left:20px;
+line-height:1.8;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:15px;
 }
 
-.service{
-background:#fff5f5;
-padding:20px;
+.gallery img{
+width:100%;
 border-radius:10px;
-text-align:center;
-font-weight:bold;
-color:#c00000;
-box-shadow:0 2px 8px rgba(0,0,0,0.2);
+box-shadow:0 0 10px rgba(0,0,0,.15);
 }
 
-footer{
-background:#7a0000;
+.about{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+line-height:1.8;
+}
+
+.contact{
+background:#d50000;
+color:white;
+padding:30px;
+border-radius:10px;
 text-align:center;
-padding:20px;
-margin-top:20px;
+}
+
+.contact h2{
+margin-bottom:15px;
 }
 
 .whatsapp{
@@ -119,92 +122,142 @@ padding:15px 20px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
+box-shadow:0 0 10px rgba(0,0,0,.3);
 }
 
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+header h1{
+font-size:28px;
+}
+}
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-<div class="overlay">
+<header>
 
-<img src="logo.png" class="logo" alt="शर्मा ग्राफिक्स लोगो">
+<img src="logo.jpg" class="logo" alt="Logo">
 
-<h1>शर्मा ग्राफिक्स एवं प्रिंट स्टूडियो</h1>
+<h1>शर्मा ग्राफिक्स & प्रिंट स्टूडियो</h1>
 
-<p>
-शादी कार्ड • मुंडन कार्ड • विजिटिंग कार्ड • फ्लेक्स बैनर<br>
-पोस्टर • पम्पलेट • लेटरपैड • फोटो प्रिंटिंग
-</p>
+<p>Cyber Cafe & Accounting Support Center</p>
 
-<a href="https://wa.me/917065439964" class="btn">
-WhatsApp पर संपर्क करें
-</a>
+<br>
+
+<p>📍 रघुनाथपुर (परशुरामपुर), बस्ती - 272130</p>
+
+<p>📞 7065439964</p>
+
+</header>
+
+<div class="container">
+
+<h2 class="section-title">हमारी सेवाएं</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>ऑनलाइन सेवाएं</h3>
+<ul>
+<li>PAN Card</li>
+<li>Voter ID</li>
+<li>Aadhaar Services</li>
+<li>Driving Licence</li>
+<li>Passport Seva</li>
+<li>Ayushman Card</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>GST एवं अकाउंटिंग</h3>
+<ul>
+<li>GST Registration</li>
+<li>GST Return Filing</li>
+<li>Income Tax Return</li>
+<li>TDS Return</li>
+<li>Tally Support</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>प्रिंटिंग सेवाएं</h3>
+<ul>
+<li>Visiting Card</li>
+<li>Flex Printing</li>
+<li>Banner Printing</li>
+<li>Wedding Card Design</li>
+<li>Photo Editing</li>
+</ul>
+</div>
 
 </div>
+
 </div>
 
 <div class="container">
 
-<div class="card">
-<h2>हमारे बारे में</h2>
+<h2 class="section-title">हमारी दुकान</h2>
 
-<p>
-शर्मा ग्राफिक्स एवं प्रिंट स्टूडियो में सभी प्रकार की डिजाइनिंग एवं
-प्रिंटिंग सेवाएं उपलब्ध हैं। हम शादी कार्ड, मुंडन कार्ड,
-विजिटिंग कार्ड, फ्लेक्स बैनर, पोस्टर, पम्पलेट, लेटरपैड,
-फोटो प्रिंटिंग एवं लोगो डिजाइनिंग का कार्य करते हैं।
-</p>
+<div class="gallery">
 
-</div>
+<img src="shop1.jpg" alt="Shop">
 
-<div class="card">
+<img src="shop2.jpg" alt="Shop">
 
-<h2>हमारी सेवाएँ</h2>
-
-<div class="services">
-
-<div class="service">शादी कार्ड डिजाइन</div>
-<div class="service">मुंडन कार्ड डिजाइन</div>
-<div class="service">विजिटिंग कार्ड</div>
-<div class="service">फ्लेक्स बैनर</div>
-<div class="service">पोस्टर डिजाइन</div>
-<div class="service">पम्पलेट डिजाइन</div>
-<div class="service">लेटरपैड प्रिंटिंग</div>
-<div class="service">फोटो प्रिंटिंग</div>
-<div class="service">लोगो डिजाइन</div>
-<div class="service">स्टिकर प्रिंटिंग</div>
+<img src="shop3.jpg" alt="Shop">
 
 </div>
 
 </div>
 
-<div class="card">
+<div class="container">
+
+<h2 class="section-title">हमारे बारे में</h2>
+
+<div class="about">
+
+शर्मा ग्राफिक्स & प्रिंट स्टूडियो में सभी प्रकार की ऑनलाइन सेवाएं, GST एवं ITR कार्य, प्रिंटिंग सेवाएं, फोटो एडिटिंग एवं दस्तावेज़ संबंधी कार्य उपलब्ध हैं।
+
+हम ग्राहकों को तेज, विश्वसनीय और किफायती सेवाएं प्रदान करने के लिए प्रतिबद्ध हैं।
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="contact">
 
 <h2>संपर्क करें</h2>
 
-<p><b>📞 मोबाइल:</b> 7065439964</p>
+<p>📍 रघुनाथपुर (परशुरामपुर), बस्ती - 272130</p>
 
-<br>
+<p>📞 7065439964</p>
 
-<p>
-<b>📍 पता:</b><br>
-ग्राम एवं पोस्ट - रघुनाथपुर (परशुरामपुर)<br>
-जनपद - बस्ती, पिन - 272130
-</p>
+<p>🕘 सुबह 8:00 बजे से शाम 8:00 बजे तक</p>
 
 </div>
 
 </div>
-
-<footer>
-© 2026 शर्मा ग्राफिक्स एवं प्रिंट स्टूडियो | सर्वाधिकार सुरक्षित
-</footer>
 
 <a href="https://wa.me/917065439964" class="whatsapp">
 WhatsApp
 </a>
+
+<footer>
+
+© 2026 Sharma Graphics & Print Studio
+
+</footer>
 
 </body>
 </html>
