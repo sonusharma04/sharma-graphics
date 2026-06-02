@@ -6,50 +6,82 @@
 <title>शर्मा ग्राफिक्स & प्रिंट स्टूडियो</title>
 
 <style>
+/* CSS Reset and Font */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family: 'Arial Unicode MS', 'Arial', sans-serif;
 }
 
+/* *** MODIFIED WEBSITE BACKGROUND *** */
 body{
-background:#f5f5f5;
+background: #f0f4f8; /* प्रीमियम हल्का नीला-सफेद बैकग्राउंड */
+color: #2c3e50;
 }
 
+/* *** MODIFIED HEADER COLOR *** */
 header{
-background:linear-gradient(135deg,#00BFFF,#1E90FF);
-color:white;
-text-align:center;
-padding:30px;
+background: linear-gradient(135deg, #1e293b, #0f172a); /* प्रोफेशनल डार्क नेवी ब्लू ग्रेडिएंट */
+color: white;
+text-align: center;
+padding: 35px 20px;
+border-radius: 0 0 20px 20px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .logo{
-width:140px;
-height:140px;
+width:120px;
+height:120px;
 border-radius:50%;
 background:white;
 padding:5px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
 header h1{
 margin-top:15px;
-font-size:32px;
+font-size:30px;
+letter-spacing: 0.5px;
 }
 
+header p {
+font-size: 14px;
+margin: 6px 0;
+opacity: 0.9;
+}
+
+/* Container */
 .container{
 width:90%;
-max-width:1200px;
-margin:auto;
-padding:30px 0;
+max-width:1100px;
+margin:25px auto;
+padding:10px 0;
 }
 
+/* Title matching the new theme */
 .title{
 text-align:center;
-color:#1E90FF;
-margin-bottom:20px;
+color: #1e293b; /* डार्क थीम से मैच करता टाइटल */
+margin-bottom:25px;
+font-size: 26px;
+position: relative;
+padding-bottom: 8px;
 }
 
+.title::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 60px;
+height: 3px;
+background: #1e90ff; /* टाइटल के नीचे एक सुंदर नीली लाइन */
+border-radius: 2px;
+}
+
+/* Services */
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -58,161 +90,213 @@ gap:20px;
 
 .card{
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+padding:25px;
+border-radius:12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+text-align: left;
+}
+
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .card h3{
-color:#1E90FF;
-margin-bottom:10px;
+color: #1e90ff;
+margin-bottom:12px;
+border-bottom: 2px solid #f0f4f8;
+padding-bottom: 8px;
+font-size: 18px;
 }
 
-.slider{
-max-width:500px;
-margin:auto;
+.card p {
+line-height: 1.8;
+font-size: 14px;
 }
 
-.slide{
-display:none;
-width:100%;
-height:150px;
-object-fit:cover;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+/* Small Slider Style */
+.slider-container {
+max-width: 320px;
+margin: 20px auto;
+border: 4px solid white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.slide.active{
-display:block;
+.slider-wrapper {
+display: flex;
+transition: transform 0.5s ease-in-out;
 }
 
+.slide {
+width: 100%;
+height: 240px;
+object-fit: cover;
+display: block;
+flex-shrink: 0;
+}
+
+.slider-offer {
+text-align: center;
+font-weight: bold;
+color: #e64a19;
+margin-top: 12px;
+font-size: 14px;
+}
+
+/* Shop Gallery */
 .shop-gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
+gap:20px;
 }
 
 .shop-gallery img{
 width:100%;
-border-radius:10px;
+height: 190px;
+object-fit: cover;
+border-radius:12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+border: 3px solid white;
 }
 
+/* Maps */
+.maps-container iframe {
+border: 4px solid white !important;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Contact */
 .contact{
-background:#1E90FF;
+background: linear-gradient(135deg, #1e90ff, #1c7ed6);
 color:white;
-padding:25px;
-border-radius:10px;
+padding:30px;
+border-radius:12px;
 text-align:center;
+box-shadow: 0 6px 15px rgba(28,126,214,0.2);
 }
 
+.contact h2 {
+margin-bottom: 10px;
+}
+
+/* Floating WhatsApp Button */
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 20px;
+padding:15px 22px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
+box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+display: flex;
+align-items: center;
+gap: 10px;
+z-index: 1000;
+transition: transform 0.2s;
 }
 
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:30px;
+.whatsapp:hover {
+transform: scale(1.05);
 }
+
+/* Footer */
+footer{
+background:#0f172a;
+color:rgba(255,255,255,0.7);
+text-align:center;
+padding:20px;
+margin-top:40px;
+font-size: 13px;
+border-top: 1px solid #1e293b;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-
-<img src="Logo.jpg.jpeg" class="logo">
-
+<img src="Logo.jpg.jpeg" class="logo" alt="Logo">
 <h1>शर्मा ग्राफिक्स & प्रिंट स्टूडियो</h1>
-
 <p>Cyber Cafe & Accounting Support Center</p>
-
-<br>
-
 <p>📍 रघुनाथपुर (परशुरामपुर), बस्ती - 272130</p>
 <p>📞 7065439964</p>
-
 </header>
 
 <div class="container">
-
 <h2 class="title">हमारी सेवाएं</h2>
-
 <div class="services">
 
 <div class="card">
 <h3>ऑनलाइन सेवाएं</h3>
+<p>
 PAN Card<br>
 Aadhaar Services<br>
 Voter ID<br>
 Driving Licence<br>
 Passport Seva<br>
 Ayushman Card
+</p>
 </div>
 
 <div class="card">
 <h3>GST एवं अकाउंटिंग</h3>
+<p>
 GST Registration<br>
 GST Return Filing<br>
 ITR Filing<br>
 TDS Return<br>
 Accounting Support
+</p>
 </div>
 
 <div class="card">
 <h3>प्रिंटिंग सेवाएं</h3>
+<p>
 Visiting Card Printing<br>
 Flex Printing<br>
 Banner Printing<br>
 Wedding Card Design<br>
 Photo Editing
+</p>
 </div>
 
 </div>
-
 </div>
 
 <div class="container">
-
 <h2 class="title">हमारी दुकान</h2>
-
 <div class="shop-gallery">
-<img src="Shop1.jpg.jpeg">
-<img src="Shop2.jpg.jpeg">
-<img src="Shop3.jpeg">
+<img src="Shop1.jpg.jpeg" alt="Shop 1">
+<img src="Shop2.jpg.jpeg" alt="Shop 2">
+<img src="Shop3.jpeg" alt="Shop 3">
 </div>
-
-</div>
-
-<div class="container">
-
-
-<div class="slider">
-<img class="slide active" src="Sadi1.jpg">
-<img class="slide" src="Sadi2.jpg">
-<img class="slide" src="Sadi3.jpg">
-<img class="slide" src="Sadi4.jpg">
-<img class="slide" src="Sadi5.jpg">
-<img class="slide" src="Sadi6.jpg">
-<img class="slide" src="Sadi7.jpg">
-</div>
-
 </div>
 
 <div class="container">
+<h2 class="title">शादी कार्ड डिज़ाइन</h2>
+<div class="slider-container">
+<div class="slider-wrapper" id="slider-wrapper">
+<img class="slide" src="Sadi1.jpg" alt="Slide 1">
+<img class="slide" src="Sadi2.jpg" alt="Slide 2">
+<img class="slide" src="Sadi3.jpg" alt="Slide 3">
+<img class="slide" src="Sadi4.jpg" alt="Slide 4">
+<img class="slide" src="Sadi5.jpg" alt="Slide 5">
+<img class="slide" src="Sadi6.jpg" alt="Slide 6">
+<img class="slide" src="Sadi7.jpg" alt="Slide 7">
+</div>
+</div>
+<p class="slider-offer">विशेष ऑफर: 2 सेकंड में स्लाइड बदलें! [1/7]</p>
+</div>
 
+<div class="container maps-container">
 <h2 class="title">हमारी लोकेशन</h2>
-
 <iframe
 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.1416963039715!2d82.3241162748956!3d26.93072205931745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3990ad0065106a27%3A0xeff9a96d7ece03af!2sSharma%20Graphics%20%26%20Print%20Studio!5e0!3m2!1sen!2sin!4v1780367308383!5m2!1sen!2sin"
 width="100%"
@@ -221,21 +305,18 @@ style="border:0;border-radius:10px;"
 allowfullscreen=""
 loading="lazy">
 </iframe>
-
 </div>
 
 <div class="container">
 <div class="contact">
-
 <h2>संपर्क करें</h2>
-
 <p>📍 रघुनाथपुर (परशुरामपुर), बस्ती - 272130</p>
 <p>📞 7065439964</p>
-
 </div>
 </div>
 
-<a href="https://wa.me/917065439964" class="whatsapp">
+<a href="https://wa.me/917065439964" class="whatsapp" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="20">
 WhatsApp
 </a>
 
@@ -246,17 +327,21 @@ WhatsApp
 <script>
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
+const wrapper = document.getElementById("slider-wrapper");
+const offerCaption = document.querySelector(".slider-offer");
+const totalSlides = slides.length;
 
 function changeSlide(){
-slides.forEach(slide => slide.classList.remove("active"));
-currentSlide++;
-if(currentSlide >= slides.length){
-currentSlide = 0;
-}
-slides[currentSlide].classList.add("active");
+    currentSlide++;
+    if(currentSlide >= totalSlides){
+        currentSlide = 0;
+    }
+    wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+    offerCaption.innerText = `विशेष ऑफर: 2 सेकंड में स्लाइड बदलें! [${currentSlide + 1}/${totalSlides}]`;
 }
 
-setInterval(changeSlide,3000);
+// 2000ms = 2 Secunds interval
+setInterval(changeSlide, 2000);
 </script>
 
 </body>
