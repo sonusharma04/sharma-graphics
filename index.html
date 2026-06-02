@@ -14,21 +14,22 @@ box-sizing:border-box;
 font-family: 'Arial Unicode MS', 'Arial', sans-serif;
 }
 
-/* Website Background */
+/* *** MODIFIED BACKGROUND: प्रीमियम मिक्स कलर (Gradient) *** */
 body{
-background: #f5f5f5; /* साफ़ और सिंपल बैकग्राउंड */
-color: #333;
+background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); /* लाइट पर्पल और स्काई ब्लू मिक्स */
+background-attachment: fixed;
+color: #2c3e50;
 }
 
-/* *** MODIFIED HEADER: ब्राइट स्काई ब्लू *** */
+/* *** MODIFIED HEADER: शानदार रेड ग्रेडिएंट *** */
 header{
-background: linear-gradient(135deg, #00BFFF, #1E90FF); /* आपका पसंदीदा चमकदार नीला कलर */
+background: linear-gradient(135deg, #ff0000, #b30000); /* चमकदार लाल कलर */
 color: white;
 text-align: center;
-padding: 30px 20px;
-border-radius: 0 0 15px 15px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-overflow: hidden; /* ताकि चलता हुआ टेक्स्ट बाहर न जाए */
+padding: 35px 20px;
+border-radius: 0 0 20px 20px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+overflow: hidden;
 }
 
 .logo{
@@ -37,22 +38,25 @@ height:120px;
 border-radius:50%;
 background:white;
 padding:5px;
-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
-/* *** MODIFIED TEXT: चलता हुआ नाम (Scrolling Animation) *** */
+/* *** MODIFIED TEXT: नाम को और बड़ा (Extra Large) किया गया है *** */
 .moving-text-container {
 width: 100%;
 overflow: hidden;
 margin-top: 15px;
+margin-bottom: 10px;
 }
 
 .moving-text-container h1 {
-font-size: 32px;
+font-size: 42px; /* साइज बड़ा कर दिया गया है */
+font-weight: bold;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* नाम को उभारने के लिए शैडो */
 display: inline-block;
 white-space: nowrap;
 padding-left: 100%;
-animation: marquee 12s linear infinite; /* 12 सेकंड में एक चक्कर पूरा होगा */
+animation: marquee 12s linear infinite;
 }
 
 @keyframes marquee {
@@ -61,23 +65,38 @@ animation: marquee 12s linear infinite; /* 12 सेकंड में एक �
 }
 
 header p {
-font-size: 14px;
+font-size: 15px;
 margin: 5px 0;
+opacity: 0.95;
 }
 
 /* Container */
 .container{
 width:90%;
 max-width:1100px;
-margin:20px auto;
+margin:25px auto;
 padding:10px 0;
 }
 
 .title{
 text-align:center;
-color:#1E90FF;
-margin-bottom:20px;
-font-size: 24px;
+color: #b30000; /* हेडर से मैच करता रेड टाइटल */
+margin-bottom:25px;
+font-size: 26px;
+position: relative;
+padding-bottom: 8px;
+}
+
+.title::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 60px;
+height: 3px;
+background: #ff0000;
+border-radius: 2px;
 }
 
 /* Services */
@@ -88,11 +107,11 @@ gap:20px;
 }
 
 .card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 5px rgba(0,0,0,0.05);
-transition: transform 0.2s ease;
+background: white;
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+transition: transform 0.3s ease;
 text-align: left;
 }
 
@@ -101,20 +120,22 @@ transform: translateY(-5px);
 }
 
 .card h3{
-color:#1E90FF;
-margin-bottom:10px;
-border-bottom: 2px solid #e0f2fe;
-padding-bottom: 5px;
+color: #ff0000; /* कार्ड हेडिंग भी रेड थीम में */
+margin-bottom:12px;
+border-bottom: 2px solid #f0f4f8;
+padding-bottom: 8px;
+font-size: 18px;
 }
 
 .card p {
-line-height: 1.6;
+line-height: 1.8;
+font-size: 14px;
 }
 
-/* Small Slider Style */
+/* Small Slider Style (बिना किसी टेक्स्ट के) */
 .slider-container {
 max-width: 320px;
-margin: 20px auto;
+margin: 10px auto 30px auto;
 border: 4px solid white;
 border-radius: 12px;
 overflow: hidden;
@@ -134,43 +155,36 @@ display: block;
 flex-shrink: 0;
 }
 
-.slider-offer {
-text-align: center;
-font-weight: bold;
-color: #ff4500;
-margin-top: 10px;
-font-size: 14px;
-}
-
 /* Shop Gallery */
 .shop-gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
+gap:20px;
 }
 
 .shop-gallery img{
 width:100%;
-height: 180px;
+height: 190px;
 object-fit: cover;
-border-radius:10px;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+border: 3px solid white;
 }
 
 /* Maps */
 .maps-container iframe {
-border-radius:10px;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+border: 4px solid white !important;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 /* Contact */
 .contact{
-background:#1E90FF;
+background: linear-gradient(135deg, #ff0000, #b30000);
 color:white;
-padding:25px;
-border-radius:10px;
+padding:30px;
+border-radius:12px;
 text-align:center;
-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+box-shadow: 0 6px 15px rgba(255,0,0,0.2);
 }
 
 /* Floating WhatsApp Button */
@@ -180,11 +194,11 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 20px;
+padding:15px 22px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
-box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+box-shadow: 0 4px 15px rgba(37,211,102,0.3);
 display: flex;
 align-items: center;
 gap: 10px;
@@ -194,11 +208,11 @@ z-index: 1000;
 /* Footer */
 footer{
 background:#111;
-color:white;
+color:rgba(255,255,255,0.7);
 text-align:center;
-padding:15px;
-margin-top:30px;
-border-radius: 15px 15px 0 0;
+padding:20px;
+margin-top:40px;
+font-size: 13px;
 }
 
 </style>
@@ -209,7 +223,7 @@ border-radius: 15px 15px 0 0;
 <header>
 <img src="Logo.jpg.jpeg" class="logo" alt="Logo">
 
-<!-- *** चलता हुआ नाम यहाँ है *** -->
+<!-- बड़ा और लगातार चलता हुआ नाम -->
 <div class="moving-text-container">
     <h1>शर्मा ग्राफिक्स & प्रिंट स्टूडियो</h1>
 </div>
@@ -269,8 +283,8 @@ Photo Editing
 </div>
 </div>
 
+<!-- शादी कार्ड डिज़ाइन टेक्स्ट हटा दिया गया है, सिर्फ इमेज स्लाइडर चालू है -->
 <div class="container">
-<h2 class="title">शादी कार्ड डिज़ाइन</h2>
 <div class="slider-container">
 <div class="slider-wrapper" id="slider-wrapper">
 <img class="slide" src="Sadi1.jpg" alt="Slide 1">
@@ -282,7 +296,6 @@ Photo Editing
 <img class="slide" src="Sadi7.jpg" alt="Slide 7">
 </div>
 </div>
-<p class="slider-offer">विशेष ऑफर: 2 सेकंड में स्लाइड बदलें! [1/7]</p>
 </div>
 
 <div class="container maps-container">
@@ -318,7 +331,6 @@ WhatsApp
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 const wrapper = document.getElementById("slider-wrapper");
-const offerCaption = document.querySelector(".slider-offer");
 const totalSlides = slides.length;
 
 function changeSlide(){
@@ -327,9 +339,9 @@ function changeSlide(){
         currentSlide = 0;
     }
     wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-    offerCaption.innerText = `विशेष ऑफर: 2 सेकंड में स्लाइड बदलें! [${currentSlide + 1}/${totalSlides}]`;
 }
 
+// 2 सेकंड में इमेज बदलने के लिए टाइमर सेट है
 setInterval(changeSlide, 2000);
 </script>
 
