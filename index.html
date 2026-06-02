@@ -21,20 +21,68 @@ background-attachment: fixed;
 color: #2c3e50;
 }
 
-/* HEADER: शानदार रेड ग्रेडिएंट */
+/* *** MODIFIED HEADER: इमेज स्लाइडर वाला हेडर *** */
 header{
-background: linear-gradient(135deg, #ff0000, #b30000);
+position: relative;
+height: 380px; /* हेडर की ऊंचाई */
 color: white;
 text-align: center;
-padding: 35px 20px;
 border-radius: 0 0 20px 20px;
 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 overflow: hidden;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+
+/* हेडर स्लाइडर का बैकग्राउंड कंटेनर */
+.header-slider {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+}
+
+.header-slide {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}
+
+.header-slide.active {
+opacity: 1;
+}
+
+/* हेडर के ऊपर लाल रंग का पारदर्शी पर्दा ताकि टेक्स्ट साफ़ दिखे */
+.header-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(135deg, rgba(255, 0, 0, 0.75), rgba(179, 0, 0, 0.85));
+z-index: 2;
+}
+
+/* हेडर का सारा सामान (लोगो, टेक्स्ट) इसके अंदर रहेगा */
+.header-content {
+position: relative;
+z-index: 3;
+width: 100%;
 }
 
 .logo{
-width:120px;
-height:120px;
+width:110px;
+height:110px;
 border-radius:50%;
 background:white;
 padding:5px;
@@ -52,7 +100,7 @@ margin-bottom: 10px;
 .moving-text-container h1 {
 font-size: 42px;
 font-weight: bold;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 display: inline-block;
 white-space: nowrap;
 padding-left: 100%;
@@ -67,7 +115,7 @@ animation: marquee 12s linear infinite;
 header p {
 font-size: 15px;
 margin: 5px 0;
-opacity: 0.95;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 /* हेडर के अंदर व्हाट्सऐप बटन */
@@ -83,7 +131,7 @@ border-radius: 20px;
 font-weight: bold;
 font-size: 14px;
 margin-top: 12px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 transition: transform 0.2s;
 }
 
@@ -243,20 +291,30 @@ font-size: 13px;
 <body>
 
 <header>
-<img src="Logo.jpg.jpeg" class="logo" alt="Logo">
-
-<div class="moving-text-container">
-    <h1>शर्मा ग्राफिक्स & प्रिंट工作室</h1>
+<div class="header-slider">
+    <img class="header-slide active" src="Header1.jpg" onerror="this.src='Header1.jpeg';">
+    <img class="header-slide" src="Header2.jpg" onerror="this.src='Header2.jpeg';">
+    <img class="header-slide" src="Header3.jpg" onerror="this.src='Header3.jpeg';">
 </div>
 
-<p>Cyber Cafe & Accounting Support Center</p>
-<p>📍 रघुनाथपुर (परशुरामपुर), बस्ती - 272130</p>
-<p>📞 7065439964</p>
+<div class="header-overlay"></div>
 
-<a href="https://wa.me/917065439964" class="header-whatsapp" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="18">
-    WhatsApp चैट करें
-</a>
+<div class="header-content">
+    <img src="Logo.jpg.jpeg" class="logo" alt="Logo">
+
+    <div class="moving-text-container">
+        <h1>शर्मा ग्राफिक्स & प्रिंट स्टूडियो</h1>
+    </div>
+
+    <p>Cyber Cafe & Accounting Support Center</p>
+    <p>📍 रघुनाथपुर (परशुरामपुर), बस्ती - 272130</p>
+    <p>📞 7065439964</p>
+
+    <a href="https://wa.me/917065439964" class="header-whatsapp" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="18">
+        WhatsApp चैट करें
+    </a>
+</div>
 </header>
 
 <div class="container">
@@ -309,16 +367,15 @@ Photo Editing
 </div>
 </div>
 
-<!-- *** ऑल-इन-वन स्लाइडर: यहाँ अलग-अलग फॉर्मेट की फोटो डाल दी हैं, जो भी आपके फोन में होगी वो खुद दिखने लगेगी *** -->
 <div class="container">
 <div class="slider-container">
 <div class="slider-wrapper" id="slider-wrapper">
-<img class="slide" src="Sadi1.jpg" onerror="this.src='Sadi1.jpeg'; this.onerror=function(){this.src='Sadi1.jpg.jpeg';}" alt="Slide 1">
-<img class="slide" src="Sadi2.jpg" onerror="this.src='Sadi2.jpeg'; this.onerror=function(){this.src='Sadi2.jpg.jpeg';}" alt="Slide 2">
-<img class="slide" src="Sadi3.jpg" onerror="this.src='Sadi3.jpeg'; this.onerror=function(){this.src='Sadi3.jpg.jpeg';}" alt="Slide 3">
-<img class="slide" src="Sadi4.jpg" onerror="this.src='Sadi4.jpeg'; this.onerror=function(){this.src='Sadi4.jpg.jpeg';}" alt="Slide 4">
-<img class="slide" src="Sadi5.jpg" onerror="this.src='Sadi5.jpeg'; this.onerror=function(){this.src='Sadi5.jpg.jpeg';}" alt="Slide 5">
-<img class="slide" src="Sadi6.jpg" onerror="this.src='Sadi6.jpeg'; this.onerror=function(){this.src='Sadi6.jpg.jpeg';}" alt="Slide 6">
+<img class="slide" src="Sadi1.jpg" onerror="this.src='Sadi1.jpeg'; this.onerror=function(){this.src='Sadi1.jpg.jpeg';}">
+<img class="slide" src="Sadi2.jpg" onerror="this.src='Sadi2.jpeg'; this.onerror=function(){this.src='Sadi2.jpg.jpeg';}">
+<img class="slide" src="Sadi3.jpg" onerror="this.src='Sadi3.jpeg'; this.onerror=function(){this.src='Sadi3.jpg.jpeg';}">
+<img class="slide" src="Sadi4.jpg" onerror="this.src='Sadi4.jpeg'; this.onerror=function(){this.src='Sadi4.jpg.jpeg';}">
+<img class="slide" src="Sadi5.jpg" onerror="this.src='Sadi5.jpeg'; this.onerror=function(){this.src='Sadi5.jpg.jpeg';}">
+<img class="slide" src="Sadi6.jpg" onerror="this.src='Sadi6.jpeg'; this.onerror=function(){this.src='Sadi6.jpg.jpeg';}">
 </div>
 </div>
 </div>
@@ -353,6 +410,7 @@ WhatsApp
 </footer>
 
 <script>
+// नीचे वाला शादी कार्ड स्लाइडर (2 सेकंड में बदलेगा)
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 const wrapper = document.getElementById("slider-wrapper");
@@ -365,8 +423,21 @@ function changeSlide(){
     }
     wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
-
 setInterval(changeSlide, 2000);
+
+
+// *** NEW: हेडर बैकग्राउंड स्लाइडर स्क्रिप्ट (1 सेकंड में बदलेगा) ***
+let currentHeaderSlide = 0;
+const headerSlides = document.querySelectorAll(".header-slide");
+const totalHeaderSlides = headerSlides.length;
+
+function changeHeaderSlide() {
+    headerSlides[currentHeaderSlide].classList.remove("active");
+    currentHeaderSlide = (currentHeaderSlide + 1) % totalHeaderSlides;
+    headerSlides[currentHeaderSlide].classList.add("active");
+}
+// 1000ms = 1 सेकंड का टाइमर चालू है
+setInterval(changeHeaderSlide, 1000);
 </script>
 
 </body>
