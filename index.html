@@ -66,16 +66,57 @@ color:#d50000;
 margin-bottom:10px;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:15px;
+<h2 class="title">हमारी दुकान</h2>
+
+<div class="slider">
+    <img class="slide active" src="Sadi1.jpg">
+    <img class="slide" src="Sadi2.jpg">
+    <img class="slide" src="Sadi3.jpg">
+    <img class="slide" src="Sadi4.jpg">
+    <img class="slide" src="Sadi5.jpg">
+    <img class="slide" src="Sadi6.jpg">
+    <img class="slide" src="Sadi7.jpg">
+</div>
+
+<style>
+.slider{
+position:relative;
+max-width:900px;
+margin:auto;
 }
 
-.gallery img{
+.slide{
+display:none;
 width:100%;
-border-radius:10px;
+height:450px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
+
+.slide.active{
+display:block;
+}
+</style>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+
+function changeSlide(){
+slides.forEach(slide => slide.classList.remove("active"));
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+
+slides[currentSlide].classList.add("active");
+}
+
+setInterval(changeSlide,3000);
+</script>
 
 .contact{
 background:#d50000;
